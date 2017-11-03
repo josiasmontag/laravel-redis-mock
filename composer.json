@@ -1,0 +1,43 @@
+{
+    "name": "josiasmontag/laravel-redis-mock",
+    "description": "This Laravel package provides a Redis mock for your tests",
+    "keywords": ["localization", "language", "laravel", "php"],
+    "homepage": "https://github.com/josiasmontag/laravel-redis-mock",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Josias Montag",
+            "email": "josias@montag.info"
+        }
+    ],
+    "require": {
+        "php" : ">=7.0.0",
+        "laravel/framework": "~5.5.0",
+        "predis/predis": "^1.1",
+        "m6web/redis-mock": "^2.8"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "6.2",
+        "orchestra/testbench": "~3.5.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Lunaweb\\RedisMock\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Lunaweb\\RedisMock\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "phpunit": "vendor/phpunit/phpunit/phpunit"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Lunaweb\\RedisMock\\Providers\\RedisMockServiceProvider"
+            ]
+        }
+    }
+}
