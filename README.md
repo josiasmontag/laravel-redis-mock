@@ -9,7 +9,7 @@
 </p>
 
 
-This Laravel package provides a Redis mock for your tests. It is based on [Redis PHP Mock](https://github.com/M6Web/RedisMock).
+This Laravel package provides a Redis mock for your tests. It depends on [Redis PHP Mock](https://github.com/M6Web/RedisMock).
 
 
 ## Installation & Usage
