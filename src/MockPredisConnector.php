@@ -20,6 +20,7 @@ class MockPredisConnector extends PredisConnector
      *
      * @param  array $config
      * @param  array $options
+     *
      * @return \Illuminate\Redis\Connections\PredisConnection
      */
     public function connect(array $config, array $options)
@@ -33,6 +34,27 @@ class MockPredisConnector extends PredisConnector
         $redisMockClass = $factory->getAdapter('Predis\Client', true);
 
         return new MockPredisConnection(new $redisMockClass($config, $formattedOptions));
+    }
+
+    /**
+     * Create a new clustered Predis connection.
+     *
+     * @param  array $config
+     * @param  array $clusterOptions
+     * @param  array $options
+     *
+     * @return \Illuminate\Redis\Connections\PredisClusterConnection
+     */
+    public function connectToCluster(array $config, array $clusterOptions, array $options)
+    {
+        $clusterSpecificOptions = Arr::pull($config, 'options', []);
+
+        $factory = new RedisMockFactory();
+        $redisMockClass = $factory->getAdapter('Predis\Client', true);
+
+        return new MockPredisConnection(new $redisMockClass(array_values($config), array_merge(
+            $options, $clusterOptions, $clusterSpecificOptions
+        )));
     }
 
 }
