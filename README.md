@@ -36,6 +36,9 @@ Now, you can switch to the `mock` client in your `.env.testing`:
 ```
 REDIS_CLIENT=mock
 ```
-
+Alternatively, you can switch to the mock in your `phpunit.xml`:
+```
+<env name="REDIS_CLIENT" value="mock"/>
+```
 Done! Your tests should work without a local redis server running.
 
