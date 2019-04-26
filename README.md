@@ -20,6 +20,8 @@ To get started, use Composer to add the package to your project's dependencies:
     composer require josiasmontag/laravel-redis-mock
 
 
+This package adds a new `mock` Redis client.
+
 In `config/database.php`, make the Redis client configurable via environment variable:
 
 ```php
