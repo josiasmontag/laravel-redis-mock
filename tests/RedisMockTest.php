@@ -26,6 +26,18 @@ class RedisMockTest extends TestCase
 
     }
 
+    public function testPipeline() {
+
+        $this->assertInstanceOf(MockPredisConnection::class, Redis::connection());
+
+        Redis::pipeline(function ($pipe) {
+            $pipe->set('key1', 'test1');
+            $pipe->set('key2', 'test2');
+        });
+
+        $this->assertEquals('test2', Redis::get('key2'));
+    }
+
 }
 
 
