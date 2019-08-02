@@ -8,17 +8,10 @@
 namespace Lunaweb\RedisMock\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Support\Arr;
-use Lunaweb\RedisMock\RedisManager;
+use Lunaweb\RedisMock\MockPredisConnector;
 
 class RedisMockServiceProvider extends ServiceProvider
 {
-    /**
-     * Indicates if loading of the provider is deferred.
-     *
-     * @var bool
-     */
-    protected $defer = true;
 
     /**
      * Bootstrap the application services.
@@ -27,7 +20,9 @@ class RedisMockServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $this->app->make('redis')->extend('mock', function () {
+            return new MockPredisConnector();
+        });
     }
 
     /**
@@ -38,26 +33,7 @@ class RedisMockServiceProvider extends ServiceProvider
     public function register()
     {
 
-        $this->app->singleton('redis',function ($app) {
-            $config = $app->make('config')->get('database.redis');
-
-            return new RedisManager($app, Arr::pull($config, 'client', 'predis'), $config);
-        });
-
-        $this->app->bind('redis.connection', function ($app) {
-            return $app['redis']->connection();
-        });
     }
 
-
-    /**
-     * Get the services provided by the provider.
-     *
-     * @return array
-     */
-    public function provides()
-    {
-        return ['redis', 'redis.connection'];
-    }
 
 }

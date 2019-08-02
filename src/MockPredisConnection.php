@@ -15,7 +15,8 @@ class MockPredisConnection extends PredisConnection
     /**
      * Execute commands in a pipeline.
      *
-     * @param  callable|null  $callback
+     * @param callable|null $callback
+     *
      * @return \Redis|array
      */
     public function pipeline(callable $callback = null)

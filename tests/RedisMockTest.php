@@ -18,17 +18,23 @@ class RedisMockTest extends TestCase
     use EnvironmentSetUp;
 
 
-    public function testMock() {
+    public function testRedisConnectionInstance()
+    {
 
         $this->assertInstanceOf(MockPredisConnection::class, Redis::connection());
+
+    }
+
+    public function testSetAndGet()
+    {
+
         Redis::set('key', 'test');
         $this->assertEquals('test', Redis::get('key'));
 
     }
 
-    public function testPipeline() {
-
-        $this->assertInstanceOf(MockPredisConnection::class, Redis::connection());
+    public function testPipeline()
+    {
 
         Redis::pipeline(function ($pipe) {
             $pipe->set('key1', 'test1');

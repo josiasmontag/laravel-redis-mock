@@ -18,8 +18,8 @@ class MockPredisConnector extends PredisConnector
     /**
      * Create a new clustered Predis connection.
      *
-     * @param  array $config
-     * @param  array $options
+     * @param array $config
+     * @param array $options
      *
      * @return \Illuminate\Redis\Connections\PredisConnection
      */
@@ -39,9 +39,9 @@ class MockPredisConnector extends PredisConnector
     /**
      * Create a new clustered Predis connection.
      *
-     * @param  array $config
-     * @param  array $clusterOptions
-     * @param  array $options
+     * @param array $config
+     * @param array $clusterOptions
+     * @param array $options
      *
      * @return \Illuminate\Redis\Connections\PredisClusterConnection
      */

@@ -7,7 +7,6 @@
 
 namespace  Lunaweb\RedisMock\Tests;
 
-use Illuminate\Redis\RedisServiceProvider;
 use Lunaweb\RedisMock\Providers\RedisMockServiceProvider;
 
 trait EnvironmentSetUp
@@ -19,7 +18,7 @@ trait EnvironmentSetUp
         $app['config']->set('app.debug', true);
         $app['config']->set('database.redis.client', 'mock');
 
-        $app->register(RedisServiceProvider::class);
+
         $app->register(RedisMockServiceProvider::class);
     }
 
