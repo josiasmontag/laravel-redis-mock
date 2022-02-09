@@ -2,7 +2,7 @@
 
 
 <p align="center">
-<a href="https://travis-ci.org/josiasmontag/laravel-redis-mock"><img src="https://travis-ci.org/josiasmontag/laravel-redis-mock.svg" alt="Build Status"></a>
+<a href="https://github.com/josiasmontag/laravel-redis-mock/actions/workflows/run-tests.yml"><img src="https://github.com/josiasmontag/laravel-redis-mock/actions/workflows/run-tests.yml/badge.svg" alt="Build Status"></a>
 <a href="https://packagist.org/packages/josiasmontag/laravel-redis-mock"><img src="https://poser.pugx.org/josiasmontag/laravel-redis-mock/d/total.svg" alt="Total Downloads"></a>
 <a href="https://packagist.org/packages/josiasmontag/laravel-redis-mock"><img src="https://poser.pugx.org/josiasmontag/laravel-redis-mock/v/stable.svg" alt="Latest Stable Version"></a>
 <a href="https://packagist.org/packages/josiasmontag/laravel-redis-mock"><img src="https://poser.pugx.org/josiasmontag/laravel-redis-mock/license.svg" alt="License"></a>
@@ -10,6 +10,8 @@
 
 
 This Laravel package provides a Redis mock for your tests. It depends on [Redis PHP Mock](https://github.com/M6Web/RedisMock).
+
+This makes it possible to run your tests without any local Redis server running!
 
 
 ## Installation & Usage
