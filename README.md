@@ -49,7 +49,8 @@ Done! Your tests should work without a local redis server running.
 ## Package Development
 If you are using Redis as part of a Laravel package, you should already have a `TestCase.php` that is extending `Orchestra\Testbench\Testcase`. 
 
-Within this file you should add `RedisMockServiceProvider` e.g.
+Within this file you should add `RedisMockServiceProvider` to `getPackageProviders` method
+e.g.
 
 ```
     /**
