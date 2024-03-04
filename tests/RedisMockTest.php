@@ -10,13 +10,10 @@ namespace Lunaweb\RedisMock\Tests;
 
 use Illuminate\Support\Facades\Redis;
 use Lunaweb\RedisMock\MockPredisConnection;
-use Orchestra\Testbench\TestCase;
+
 
 class RedisMockTest extends TestCase
 {
-
-    use EnvironmentSetUp;
-
 
     public function testRedisConnectionInstance()
     {

@@ -1,15 +1,10 @@
 <?php
-/**
- * Created by Josias Montag
- * Date: 03.11.17 19:57
- * Mail: josias@montag.info
- */
 
-namespace  Lunaweb\RedisMock\Tests;
+namespace Lunaweb\RedisMock\Tests;
 
 use Lunaweb\RedisMock\Providers\RedisMockServiceProvider;
 
-trait EnvironmentSetUp
+abstract class TestCase extends \Orchestra\Testbench\TestCase
 {
 
     protected function getEnvironmentSetUp($app)
