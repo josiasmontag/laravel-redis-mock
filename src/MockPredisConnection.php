@@ -19,7 +19,7 @@ class MockPredisConnection extends PredisConnection
      *
      * @return \Redis|array
      */
-    public function pipeline(callable $callback = null)
+    public function pipeline(?callable $callback = null)
     {
         $pipeline = $this->client()->pipeline();
 
